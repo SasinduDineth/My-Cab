@@ -17,13 +17,10 @@
         <p style="color:red;">Invalid username or password!</p>
     <% } %>
     <form action="AuthServlet" method="post">
-        <label>Username:</label>
-        <input type="text" name="username" required><br>
-        
-        <label>Password:</label>
-        <input type="password" name="password" required><br>
-
-        <button type="submit">Login</button>
-    </form>
+    <input type="text" name="username" required>
+    <input type="password" name="password" required>
+    <button type="submit">Login</button>
+    
+</form>
 </body>
 </html>

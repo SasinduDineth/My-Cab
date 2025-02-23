@@ -9,4 +9,30 @@
             30
         </session-timeout>
     </session-config>
+    
+<servlet>
+    <servlet-name>AuthServlet</servlet-name>
+    <servlet-class>com.customer.AuthServlet</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>DashboardServlet</servlet-name>
+    <servlet-class>com.customer.DashboardServelt</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AuthServlet</servlet-name>
+    <url-pattern>/AuthServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>DashboardServlet</servlet-name>
+    <url-pattern>/DashboardServlet</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+</welcome-file-list>
+
 </web-app>
+
+

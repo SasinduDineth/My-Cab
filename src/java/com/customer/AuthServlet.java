@@ -1,3 +1,6 @@
+package com.customer;
+
+import com.customer.DatabaseConnection;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-@WebServlet("/AuthServlet")
 public class AuthServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
@@ -23,11 +24,7 @@ public class AuthServlet extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                HttpSession session = request.getSession();
-                session.setAttribute("username", username);
-                session.setAttribute("role", rs.getString("role"));
-
-                response.sendRedirect("dashboard.jsp");
+                response.sendRedirect("dashboard.jsp?username=" + username + "&role=" + rs.getString("role"));
             } else {
                 response.sendRedirect("login.jsp?error=1");
             }
