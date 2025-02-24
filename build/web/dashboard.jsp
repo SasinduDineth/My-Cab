@@ -44,6 +44,7 @@
 
         <br>
         <a href="BookingManagement.jsp">Manage Bookings</a>
+        <a href="ManageDrivers.jsp">Manage Drivers</a>
     </div>
 </body>
 </html>
