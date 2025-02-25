@@ -1,22 +1,13 @@
+<%@page import="com.customer.DatabaseConnection"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.sql.*, javax.servlet.http.HttpSession" %>
+<%@ page import="java.sql.*" %>
+
 <%
-    HttpSession sessionObj = request.getSession(false);
-    if (sessionObj == null || sessionObj.getAttribute("username") == null) {
-        response.sendRedirect("Login.jsp");
-        return;
-    }
-
-    Integer customerId = (Integer) sessionObj.getAttribute("customerId");
-    if (customerId == null) {
-        response.sendRedirect("Login.jsp");
-        return;
-    }
-
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +17,6 @@
     <h2>Book a Ride</h2>
     
     <form action="BookingServlet" method="post">
-        <input type="hidden" name="customer_id" value="<%= customerId %>">
 
         <label for="vehicle_type">Vehicle Type:</label>
         <select name="vehicle_type" required>

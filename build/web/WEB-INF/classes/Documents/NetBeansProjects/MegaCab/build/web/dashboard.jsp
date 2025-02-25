@@ -25,7 +25,7 @@
 <body>
     <div class="container">
         <h2>Admin Dashboard</h2>
-        <a class="logout" href="logout.jsp">Logout</a>
+        <a class="logout" href="login.jsp">Logout</a>
         
         <div class="card">
             <h3>Total Bookings</h3>
